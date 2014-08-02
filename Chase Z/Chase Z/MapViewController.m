@@ -66,21 +66,22 @@
     if( [annotation isKindOfClass: [ZombieAnnotation class]] )
     {
         //attempt to re-use old pin views.
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"mapViewUserAnnotation"];
+        MKAnnotationView* pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"mapViewUserAnnotation"];
         
         if( !pinView )
         {
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapViewUserAnnotation"];
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapViewUserAnnotation"];
         }
        // NSLog(@"back doing bad things");
         
         pinView.canShowCallout = NO;
         pinView.annotation = annotation;
         
-        //pinView.image = [UIImage imageNamed:@"location_free.png"];
+        pinView.image = [UIImage imageNamed:@"zombie.png"];
+        
         pinView.hidden = NO;
         pinView.draggable = YES;
-        pinView.pinColor = MKPinAnnotationColorRed;
+        //pinView.pinColor = MKPinAnnotationColorRed;
       //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
         
         return pinView;
