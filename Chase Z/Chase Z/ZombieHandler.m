@@ -73,4 +73,14 @@
     NSLog(@"Highest distance from user %f", maxDistance);
 }
 
+-(void) update:(CLLocationCoordinate2D) userLoc
+{
+    self.userLocation = userLoc;
+    for (int i = 0 ; i < self.zombies.count; i++)
+    {
+        [[self.zombies objectAtIndex:i] update:userLoc];
+    }
+    
+}
+
 @end

@@ -46,9 +46,18 @@
         ZombieAnnotation* annotation = [[ZombieAnnotation alloc] init];
         Zombie* zombie = [self.zombieHandler.zombies objectAtIndex:i];
         annotation.coordinate = zombie.currentPosition;
+        zombie.annotation = annotation;
         [self.mapView addAnnotation:annotation];
-
     }
+}
+
+-(void) update
+{
+   // NSLog(@"updating");
+    if (self.zombieHandler)
+        [self.zombieHandler update:self.mapView.userLocation.coordinate];
+    
+     [self performSelector:@selector(update) withObject:self afterDelay:1/30.0f ];
 }
 
 //map view
@@ -63,9 +72,11 @@
         {
             pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapViewUserAnnotation"];
         }
+       // NSLog(@"back doing bad things");
         
         pinView.canShowCallout = NO;
         pinView.annotation = annotation;
+        
         //pinView.image = [UIImage imageNamed:@"location_free.png"];
         pinView.hidden = NO;
         pinView.draggable = YES;
@@ -90,22 +101,25 @@
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-   // [self.mapView.userLocation setCoordinate:newLocation.coordinate];
     NSLog(@"Updated User Location");
     if (!m_receivedInitialLocation)
     {
         m_receivedInitialLocation = YES;
         MKUserLocation* userLocation = self.mapView.userLocation;
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 8000, 8000);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 4000, 4000);
         [self.mapView setRegion:region animated:YES];
         
         //now we know where are (roughly) we can generate the zomboids
         CLLocationCoordinate2D  location = userLocation.coordinate;
         self.zombieHandler = [[ZombieHandler alloc] initWithUserLocation:location];
         [self initialiseZombieAnnotations];
+        
+        //finally get cracking!
+        [self update];
+
     }
-    
-    //self.mapView.centerCoordinate = userLocation.location.coordinate;
+  //  else
+    //    self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
 

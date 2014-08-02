@@ -37,3 +37,4 @@ CLLocationCoordinate2D LatLonDestPoint(CLLocationCoordinate2D origin, double bea
     
     return coordinate;
 }
+

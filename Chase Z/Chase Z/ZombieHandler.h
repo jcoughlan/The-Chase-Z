@@ -14,6 +14,7 @@
 
 -(id) initWithUserLocation:(CLLocationCoordinate2D) userLoc;
 
+-(void) update:(CLLocationCoordinate2D) userLoc;
 @property (strong, nonatomic) NSMutableArray* zombies;
 @property CLLocationCoordinate2D userLocation;
 //@property (strong, nonatomic) MapViewController* mapViewController;

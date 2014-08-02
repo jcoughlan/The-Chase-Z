@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "LatLon.h"
+#import "ZombieAnnotation.h"
+#import "MathHelpers.h"
 @interface Zombie : NSObject
 
 -(id) initWithPosition:(CLLocationCoordinate2D) position;
+
 @property CLLocationCoordinate2D currentPosition;
+@property ZombieAnnotation* annotation;
+@property BOOL canSeeUser;
 @end
