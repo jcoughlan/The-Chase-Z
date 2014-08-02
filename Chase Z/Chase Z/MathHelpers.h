@@ -12,12 +12,6 @@
 
 + (float)randomFloatBetween:(float)minRange and:(float)maxRange;
 
-+( CLLocation*) offsetLocation:(CLLocation*)startLocation and:(double)offsetMeters also:(double)bearing;
-
-+(float) bearingBetweenStartLocation:(CLLocation *)startLocation andEndLocation:(CLLocation *)endLocation;
-
-+ (double) Rad2Deg:(double)angle;
-
 + (double)degreesFromRadians:(double)radians;
 
 + (double)radiansFromDegrees:(double)degrees;

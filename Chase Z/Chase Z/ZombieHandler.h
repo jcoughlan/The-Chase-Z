@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Zombie.h"
 #import "MathHelpers.h"
+#import "SafeRoom.h"
+
 //#import "MapViewController.h"
 @interface  ZombieHandler : NSObject
 
@@ -17,5 +19,6 @@
 -(void) update:(CLLocationCoordinate2D) userLoc;
 @property (strong, nonatomic) NSMutableArray* zombies;
 @property CLLocationCoordinate2D userLocation;
+@property SafeRoom* safeRoom;
 //@property (strong, nonatomic) MapViewController* mapViewController;
 @end

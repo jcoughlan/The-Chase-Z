@@ -51,13 +51,24 @@
     }
 }
 
+-(void) initialiseSafeRoomAnnotation
+{
+    //draw annotation for safeRoom
+    SafeRoomAnnotation* annotation = [[SafeRoomAnnotation alloc] init];
+    SafeRoom* safeRoom = self.zombieHandler.safeRoom;
+    annotation.coordinate = safeRoom.safeRoomLocation;
+    safeRoom.annotation = annotation;
+    [self.mapView addAnnotation:annotation];
+}
+
+
 -(void) update
 {
-   // NSLog(@"updating");
+    // NSLog(@"updating");
     if (self.zombieHandler)
         [self.zombieHandler update:self.mapView.userLocation.coordinate];
     
-     [self performSelector:@selector(update) withObject:self afterDelay:1/30.0f ];
+    [self performSelector:@selector(update) withObject:self afterDelay:1/30.0f ];
 }
 
 //map view
@@ -70,9 +81,9 @@
         
         if( !pinView )
         {
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapViewUserAnnotation"];
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"zombieAnnotation"];
         }
-       // NSLog(@"back doing bad things");
+        // NSLog(@"back doing bad things");
         
         pinView.canShowCallout = NO;
         pinView.annotation = annotation;
@@ -82,16 +93,40 @@
         pinView.hidden = NO;
         pinView.draggable = YES;
         //pinView.pinColor = MKPinAnnotationColorRed;
-      //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
+        //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
         
         return pinView;
+    }
+    else if ([annotation isKindOfClass:[SafeRoomAnnotation class]])
+    {
+        //attempt to re-use old pin views.
+        MKAnnotationView* pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"safeRoomAnnotation"];
+        
+        if( !pinView )
+        {
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"safeRoomAnnotation"];
+        }
+        // NSLog(@"back doing bad things");
+        
+        pinView.canShowCallout = NO;
+        pinView.annotation = annotation;
+        
+        pinView.image = [UIImage imageNamed:@"saferoom.png"];
+        
+        pinView.hidden = NO;
+        pinView.draggable = YES;
+        //pinView.pinColor = MKPinAnnotationColorRed;
+        //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
+        
+        return pinView;
+
     }
     else{
         
         if (annotation == self.mapView.userLocation)
             return nil;
     }
-        return nil;
+    return nil;
 }
 
 
@@ -115,11 +150,14 @@
         self.zombieHandler = [[ZombieHandler alloc] initWithUserLocation:location];
         [self initialiseZombieAnnotations];
         
+        //....and the safe room
+        [self initialiseSafeRoomAnnotation];
+        
         //finally get cracking!
         [self update];
-
+        
     }
-  //  else
+    //  else
     //    self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
@@ -128,12 +166,12 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     
-//    NSDate* eventDate = newLocation.timestamp;
-//    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-//    NSLog(@"latitude %+.6f, longitude %+.6f\n",
-//          newLocation.coordinate.latitude,
-//          newLocation.coordinate.longitude);
-//    NSLog(@"Horizontal Accuracy:%f", newLocation.horizontalAccuracy);
+    //    NSDate* eventDate = newLocation.timestamp;
+    //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    //    NSLog(@"latitude %+.6f, longitude %+.6f\n",
+    //          newLocation.coordinate.latitude,
+    //          newLocation.coordinate.longitude);
+    //    NSLog(@"Horizontal Accuracy:%f", newLocation.horizontalAccuracy);
     
     
 }

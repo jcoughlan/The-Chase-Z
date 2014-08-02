@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2750DB21198D777E00E482FA /* SafeRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB20198D777E00E482FA /* SafeRoom.m */; };
+		2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */; };
+		2750DB26198D7D8A00E482FA /* saferoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2750DB25198D7D8A00E482FA /* saferoom.png */; };
 		275B8F75198D056F001218DD /* Zombie.m in Sources */ = {isa = PBXBuildFile; fileRef = 275B8F74198D056F001218DD /* Zombie.m */; };
 		275B8F78198D082E001218DD /* MathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 275B8F77198D082E001218DD /* MathHelpers.m */; };
 		275B8F7B198D0FD6001218DD /* LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 275B8F7A198D0FD6001218DD /* LatLon.m */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2750DB1F198D777E00E482FA /* SafeRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeRoom.h; sourceTree = "<group>"; };
+		2750DB20198D777E00E482FA /* SafeRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeRoom.m; sourceTree = "<group>"; };
+		2750DB22198D7AB600E482FA /* SafeRoomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafeRoomAnnotation.h; path = ../SafeRoomAnnotation.h; sourceTree = "<group>"; };
+		2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SafeRoomAnnotation.m; path = ../SafeRoomAnnotation.m; sourceTree = "<group>"; };
+		2750DB25198D7D8A00E482FA /* saferoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saferoom.png; sourceTree = "<group>"; };
 		275B8F73198D056F001218DD /* Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombie.h; sourceTree = "<group>"; };
 		275B8F74198D056F001218DD /* Zombie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zombie.m; sourceTree = "<group>"; };
 		275B8F76198D082E001218DD /* MathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelpers.h; sourceTree = "<group>"; };
@@ -113,6 +121,8 @@
 			children = (
 				275B8F73198D056F001218DD /* Zombie.h */,
 				275B8F74198D056F001218DD /* Zombie.m */,
+				2750DB1F198D777E00E482FA /* SafeRoom.h */,
+				2750DB20198D777E00E482FA /* SafeRoom.m */,
 				277E975F198BCF7300A1EA74 /* ZombieHandler.h */,
 				277E9760198BCF7300A1EA74 /* ZombieHandler.m */,
 				276C97C1198981F000086AB6 /* MapViewController.h */,
@@ -125,12 +135,15 @@
 				276C97A6198980AA00086AB6 /* GameViewController.m */,
 				276C97A8198980AA00086AB6 /* Main.storyboard */,
 				276C97AB198980AA00086AB6 /* Images.xcassets */,
+				2750DB25198D7D8A00E482FA /* saferoom.png */,
 				2791F3CC198D56A7005BF42F /* zombie.png */,
 				276C979A198980AA00086AB6 /* Supporting Files */,
 				275B8F76198D082E001218DD /* MathHelpers.h */,
 				275B8F77198D082E001218DD /* MathHelpers.m */,
 				275B8F79198D0FD6001218DD /* LatLon.h */,
 				275B8F7A198D0FD6001218DD /* LatLon.m */,
+				2750DB22198D7AB600E482FA /* SafeRoomAnnotation.h */,
+				2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */,
 				275B8F7C198D1364001218DD /* ZombieAnnotation.h */,
 				275B8F7D198D1364001218DD /* ZombieAnnotation.m */,
 			);
@@ -246,6 +259,7 @@
 				276C97AA198980AA00086AB6 /* Main.storyboard in Resources */,
 				276C97AC198980AA00086AB6 /* Images.xcassets in Resources */,
 				276C97A4198980AA00086AB6 /* Shader.vsh in Resources */,
+				2750DB26198D7D8A00E482FA /* saferoom.png in Resources */,
 				2791F3CD198D56A7005BF42F /* zombie.png in Resources */,
 				276C97A2198980AA00086AB6 /* Shader.fsh in Resources */,
 			);
@@ -265,9 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */,
 				275B8F7E198D1364001218DD /* ZombieAnnotation.m in Sources */,
 				277E9761198BCF7300A1EA74 /* ZombieHandler.m in Sources */,
 				276C97C3198981F000086AB6 /* MapViewController.m in Sources */,
+				2750DB21198D777E00E482FA /* SafeRoom.m in Sources */,
 				276C97A0198980AA00086AB6 /* AppDelegate.m in Sources */,
 				275B8F75198D056F001218DD /* Zombie.m in Sources */,
 				276C97A7198980AA00086AB6 /* GameViewController.m in Sources */,

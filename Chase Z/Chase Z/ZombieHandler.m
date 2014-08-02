@@ -8,6 +8,9 @@
 
 #import "ZombieHandler.h"
 
+//how far away the safe room is
+#define SAFE_ROOM_DISTANCE 3000
+
 //only draw zomboids to x metres
 #define MAP_BOUNDS 2000
 
@@ -71,6 +74,15 @@
            maxDistance = distanceMeters;
     }
     NSLog(@"Highest distance from user %f", maxDistance);
+    
+    
+    //set up safe room location
+    
+    //first get a random bearing
+    double bearing = [MathHelpers randomFloatBetween:0.0 and:360.0];
+    
+    CLLocationCoordinate2D safeRoomLocation = [MathHelpers coordinateFromCoord:self.userLocation atDistanceKm:SAFE_ROOM_DISTANCE/1000.0 atBearingDegrees:bearing];
+    self.safeRoom = [[SafeRoom alloc] initWithLocation:safeRoomLocation];
 }
 
 -(void) update:(CLLocationCoordinate2D) userLoc

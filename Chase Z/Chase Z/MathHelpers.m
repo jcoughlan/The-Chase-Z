@@ -19,34 +19,6 @@
     return val;
 }
 
-+(CLLocation*) offsetLocation:(CLLocation*)startLocation and:(double)offsetMeters also:(double)bearing
-{
-	
-	double EARTH_MEAN_RADIUS_METERS = 6372796.99;
-	double lat2 = asin( sin(startLocation.coordinate.latitude) * cos(offsetMeters/EARTH_MEAN_RADIUS_METERS) + cos(startLocation.coordinate.latitude) * sin(offsetMeters/EARTH_MEAN_RADIUS_METERS) * cos(bearing) );
-	double lon2 = startLocation.coordinate.longitude + atan2( sin(bearing) * sin(offsetMeters/EARTH_MEAN_RADIUS_METERS) * cos(startLocation.coordinate.latitude), cos(offsetMeters/EARTH_MEAN_RADIUS_METERS) - sin(startLocation.coordinate.latitude) * sin(lat2));
-	CLLocation *tempLocation = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
-    
-	return tempLocation;
-}
-
-+ (double) Rad2Deg:(double)angle {
-    static double ratio = 180.0 / 3.141592653589793238;
-    return angle * ratio;
-}
-
-
-+(float) bearingBetweenStartLocation:(CLLocation *)startLocation andEndLocation:(CLLocation *)endLocation{
-    
-    CLLocation *northPoint = [[CLLocation alloc] initWithLatitude:(startLocation.coordinate.latitude)+.01 longitude:endLocation.coordinate.longitude] ;
-    float magA = [northPoint distanceFromLocation:startLocation];
-    float magB = [endLocation distanceFromLocation:startLocation];
-    CLLocation *startLat = [[CLLocation alloc] initWithLatitude:startLocation.coordinate.latitude longitude:0] ;
-    CLLocation *endLat = [[CLLocation alloc] initWithLatitude:endLocation.coordinate.latitude longitude:0] ;
-    float aDotB = magA*[endLat distanceFromLocation:startLat];
-    return [MathHelpers Rad2Deg:(acosf(aDotB/(magA*magB)))];
-}
-
 + (double)radiansFromDegrees:(double)degrees
 {
     return degrees * (M_PI/180.0);

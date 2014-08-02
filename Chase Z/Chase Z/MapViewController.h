@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ZombieHandler.h"
 #import "ZombieAnnotation.h"
+#import "SafeRoomAnnotation.h"
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
     BOOL m_receivedInitialLocation;
