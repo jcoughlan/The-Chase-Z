@@ -12,6 +12,8 @@
 @interface SafeRoom : NSObject
 
 -(id) initWithLocation:(CLLocationCoordinate2D) location;
+-(void) update:(CLLocationCoordinate2D) playerLocation;
+
 @property SafeRoomAnnotation* annotation;
 @property CLLocationCoordinate2D safeRoomLocation;
 @end

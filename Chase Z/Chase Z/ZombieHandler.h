@@ -10,7 +10,7 @@
 #import "Zombie.h"
 #import "MathHelpers.h"
 #import "SafeRoom.h"
-
+#import "Player.h"
 //#import "MapViewController.h"
 @interface  ZombieHandler : NSObject
 
@@ -20,5 +20,6 @@
 @property (strong, nonatomic) NSMutableArray* zombies;
 @property CLLocationCoordinate2D userLocation;
 @property SafeRoom* safeRoom;
+@property Player* player;
 //@property (strong, nonatomic) MapViewController* mapViewController;
 @end

@@ -17,4 +17,9 @@
     return self;
 }
 
+-(void) update:(CLLocationCoordinate2D) playerLocation
+{
+    
+}
+
 @end

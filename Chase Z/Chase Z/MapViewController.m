@@ -121,10 +121,28 @@
         return pinView;
 
     }
-    else{
+    else if (annotation == self.mapView.userLocation)
+    {
+        //attempt to re-use old pin views.
+        MKAnnotationView* pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"userAnnotation"];
         
-        if (annotation == self.mapView.userLocation)
-            return nil;
+        if( !pinView )
+        {
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"userAnnotation"];
+        }
+        
+        pinView.canShowCallout = NO;
+        pinView.annotation = annotation;
+        
+        pinView.image = [UIImage imageNamed:@"player.png"];
+        
+        pinView.hidden = NO;
+        pinView.draggable = YES;
+        //pinView.pinColor = MKPinAnnotationColorRed;
+        //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
+        
+        return pinView;
+    
     }
     return nil;
 }
@@ -152,6 +170,8 @@
         
         //....and the safe room
         [self initialiseSafeRoomAnnotation];
+        
+        //no need to initalise player annotation as we are using the user view
         
         //finally get cracking!
         [self update];
