@@ -18,6 +18,7 @@
 {
     self = [self init];
     self.currentPosition = position;
+    self.bearingToUser = -1.0;
     return self;
 }
 
@@ -44,16 +45,20 @@
         CLLocation* zombLocation = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
         
         double bearing = [MathHelpers bearingToLocation:userLocation   startLoc:zombLocation];
-//        
-//        [zombLocation distanceFromLocation:userLocation];
-//        double distanceLat =
-//        
+
         CLLocationCoordinate2D newLocation = [MathHelpers coordinateFromCoord:zombLocation.coordinate atDistanceKm:finalMovement/1000 atBearingDegrees:bearing];
-//        NSLog(@"OldLoc %f %f", userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-//        NSLog(@"NewLoc %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-       // CLLocationCoordinate2D newLoc= newLocation.coordinate;
+        
         [self.annotation setCoordinate:newLocation];
         self.currentPosition = newLocation;
+        
+        self.bearingToUser = bearing;
+    }
+    else if(self.bearingToUser == -1.0){
+        CLLocation* userLocation = [[CLLocation alloc] initWithLatitude:userLoc.latitude longitude:userLoc.longitude];
+        CLLocation* zombLocation = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
+        
+        double bearing = [MathHelpers bearingToLocation:userLocation   startLoc:zombLocation];
+        self.bearingToUser = bearing;
     }
     
 }
