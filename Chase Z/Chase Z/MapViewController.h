@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "ZombieHandler.h"
-
+#import "ZombieAnnotation.h"
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
     BOOL m_receivedInitialLocation;

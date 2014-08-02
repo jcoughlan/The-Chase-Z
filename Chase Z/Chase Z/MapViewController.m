@@ -33,11 +33,55 @@
     }
     
     self.mapView.showsUserLocation = YES;
+    [self.mapView setZoomEnabled:YES];
     self.mapView.delegate = self;
-    
-    self.zombieHandler = [[ZombieHandler alloc] initWithView:nil];
-    
 }
+
+
+-(void) initialiseZombieAnnotations
+{
+    for (int i = 0; i < self.zombieHandler.zombies.count; i++)
+    {
+        //draw annotation for each at position
+        ZombieAnnotation* annotation = [[ZombieAnnotation alloc] init];
+        Zombie* zombie = [self.zombieHandler.zombies objectAtIndex:i];
+        annotation.coordinate = zombie.currentPosition;
+        [self.mapView addAnnotation:annotation];
+
+    }
+}
+
+//map view
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if( [annotation isKindOfClass: [ZombieAnnotation class]] )
+    {
+        //attempt to re-use old pin views.
+        MKPinAnnotationView* pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"mapViewUserAnnotation"];
+        
+        if( !pinView )
+        {
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapViewUserAnnotation"];
+        }
+        
+        pinView.canShowCallout = NO;
+        pinView.annotation = annotation;
+        //pinView.image = [UIImage imageNamed:@"location_free.png"];
+        pinView.hidden = NO;
+        pinView.draggable = YES;
+        pinView.pinColor = MKPinAnnotationColorRed;
+      //  NSLog(@"Created zombie annotation view lat:%f, lng: %f", pinView.);
+        
+        return pinView;
+    }
+    else{
+        
+        if (annotation == self.mapView.userLocation)
+            return nil;
+    }
+        return nil;
+}
+
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
@@ -52,12 +96,20 @@
     {
         m_receivedInitialLocation = YES;
         MKUserLocation* userLocation = self.mapView.userLocation;
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 20, 20);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 8000, 8000);
         [self.mapView setRegion:region animated:YES];
+        
+        //now we know where are (roughly) we can generate the zomboids
+        CLLocationCoordinate2D  location = userLocation.coordinate;
+        self.zombieHandler = [[ZombieHandler alloc] initWithUserLocation:location];
+        [self initialiseZombieAnnotations];
     }
     
     //self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
+
+
+///location manager
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     
@@ -81,4 +133,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
+
+
 @end
