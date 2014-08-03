@@ -12,7 +12,7 @@
 #define SAFE_ROOM_DISTANCE 3000
 
 //only draw zomboids to x metres
-#define MAP_BOUNDS 2000
+#define MAP_BOUNDS 20000
 
 //only allow max x % of the map to be covered in zomboids
 #define MAX_DENSITY 0.05

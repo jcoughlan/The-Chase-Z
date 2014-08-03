@@ -104,6 +104,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2750DB5F198D868500E482FA /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				277E975F198BCF7300A1EA74 /* ZombieHandler.h */,
+				277E9760198BCF7300A1EA74 /* ZombieHandler.m */,
+				2750DB27198D7EAD00E482FA /* Player.h */,
+				2750DB28198D7EAD00E482FA /* Player.m */,
+				275B8F73198D056F001218DD /* Zombie.h */,
+				275B8F74198D056F001218DD /* Zombie.m */,
+				2750DB1F198D777E00E482FA /* SafeRoom.h */,
+				2750DB20198D777E00E482FA /* SafeRoom.m */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		2750DB60198D86B300E482FA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				276C97C1198981F000086AB6 /* MapViewController.h */,
+				276C97C2198981F000086AB6 /* MapViewController.m */,
+				276C97A5198980AA00086AB6 /* GameViewController.h */,
+				276C97A6198980AA00086AB6 /* GameViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2750DB61198D86D000E482FA /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				2750DB2A198D81AA00E482FA /* PlayerAnnotation.h */,
+				2750DB2B198D81AA00E482FA /* PlayerAnnotation.m */,
+				2750DB22198D7AB600E482FA /* SafeRoomAnnotation.h */,
+				2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */,
+				275B8F7C198D1364001218DD /* ZombieAnnotation.h */,
+				275B8F7D198D1364001218DD /* ZombieAnnotation.m */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		2750DB62198D86EA00E482FA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2750DB5D198D83FD00E482FA /* player.png */,
+				2750DB25198D7D8A00E482FA /* saferoom.png */,
+				2791F3CC198D56A7005BF42F /* zombie.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2750DB63198D86F600E482FA /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				276C97A1198980AA00086AB6 /* Shader.fsh */,
+				276C97A3198980AA00086AB6 /* Shader.vsh */,
+			);
+			name = Shader;
+			sourceTree = "<group>";
+		};
+		2750DB64198D870400E482FA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				276C979E198980AA00086AB6 /* AppDelegate.h */,
+				276C979F198980AA00086AB6 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2750DB65198D871E00E482FA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				275B8F76198D082E001218DD /* MathHelpers.h */,
+				275B8F77198D082E001218DD /* MathHelpers.m */,
+				275B8F79198D0FD6001218DD /* LatLon.h */,
+				275B8F7A198D0FD6001218DD /* LatLon.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		276C978E198980AA00086AB6 = {
 			isa = PBXGroup;
 			children = (
@@ -127,38 +205,16 @@
 		276C9799198980AA00086AB6 /* Chase Z */ = {
 			isa = PBXGroup;
 			children = (
-				2750DB27198D7EAD00E482FA /* Player.h */,
-				2750DB28198D7EAD00E482FA /* Player.m */,
-				275B8F73198D056F001218DD /* Zombie.h */,
-				275B8F74198D056F001218DD /* Zombie.m */,
-				2750DB1F198D777E00E482FA /* SafeRoom.h */,
-				2750DB20198D777E00E482FA /* SafeRoom.m */,
-				277E975F198BCF7300A1EA74 /* ZombieHandler.h */,
-				277E9760198BCF7300A1EA74 /* ZombieHandler.m */,
-				276C97C1198981F000086AB6 /* MapViewController.h */,
-				276C97C2198981F000086AB6 /* MapViewController.m */,
-				276C979E198980AA00086AB6 /* AppDelegate.h */,
-				276C979F198980AA00086AB6 /* AppDelegate.m */,
-				276C97A1198980AA00086AB6 /* Shader.fsh */,
-				276C97A3198980AA00086AB6 /* Shader.vsh */,
-				276C97A5198980AA00086AB6 /* GameViewController.h */,
-				276C97A6198980AA00086AB6 /* GameViewController.m */,
+				2750DB65198D871E00E482FA /* Helpers */,
+				2750DB64198D870400E482FA /* AppDelegate */,
+				2750DB63198D86F600E482FA /* Shader */,
+				2750DB62198D86EA00E482FA /* Images */,
+				2750DB61198D86D000E482FA /* Annotations */,
+				2750DB60198D86B300E482FA /* Controllers */,
+				2750DB5F198D868500E482FA /* GameObjects */,
 				276C97A8198980AA00086AB6 /* Main.storyboard */,
 				276C97AB198980AA00086AB6 /* Images.xcassets */,
-				2750DB5D198D83FD00E482FA /* player.png */,
-				2750DB25198D7D8A00E482FA /* saferoom.png */,
-				2791F3CC198D56A7005BF42F /* zombie.png */,
 				276C979A198980AA00086AB6 /* Supporting Files */,
-				275B8F76198D082E001218DD /* MathHelpers.h */,
-				275B8F77198D082E001218DD /* MathHelpers.m */,
-				275B8F79198D0FD6001218DD /* LatLon.h */,
-				275B8F7A198D0FD6001218DD /* LatLon.m */,
-				2750DB2A198D81AA00E482FA /* PlayerAnnotation.h */,
-				2750DB2B198D81AA00E482FA /* PlayerAnnotation.m */,
-				2750DB22198D7AB600E482FA /* SafeRoomAnnotation.h */,
-				2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */,
-				275B8F7C198D1364001218DD /* ZombieAnnotation.h */,
-				275B8F7D198D1364001218DD /* ZombieAnnotation.m */,
 			);
 			path = "Chase Z";
 			sourceTree = "<group>";

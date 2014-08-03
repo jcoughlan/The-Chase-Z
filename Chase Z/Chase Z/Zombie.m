@@ -28,7 +28,7 @@
     self.canSeeUser = [self checkIfCanSeeUser:userLoc];
     if (self.canSeeUser)
     {
-        NSLog(@"Zombie can see user");
+       // NSLog(@"Zombie can see user");
         //assuming we are updating at 30 fps
         //we need to send the zomboid towards the user at the
         //appropriate speed
