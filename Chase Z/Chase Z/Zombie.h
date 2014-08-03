@@ -18,7 +18,6 @@
 
 @property CLLocationCoordinate2D currentPosition;
 @property ZombieAnnotation* annotation;
-@property BOOL canSeeUser;
 @property double bearingToUser;
 @property ZombieState* zombieState;
 @end

@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property(retain, nonatomic) NSMutableArray* overlays;
+
 @property (strong, nonatomic) CLLocationManager* locationManager;
 
 @property (strong, nonatomic) ZombieHandler* zombieHandler;

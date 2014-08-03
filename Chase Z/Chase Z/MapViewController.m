@@ -27,6 +27,8 @@
         self.locationManager.distanceFilter=1;
     }
     
+    self.overlays = [[NSMutableArray alloc]init];
+    
     if([CLLocationManager locationServicesEnabled]){
         [self.locationManager startUpdatingLocation];
         NSLog(@"Location updates started");
@@ -69,9 +71,50 @@
 
 -(void) update
 {
+    dispatch_queue_t update_loop = dispatch_queue_create("chase_z_update_loop", NULL);
+    //clear the old overlays
+    [self.mapView removeOverlays:self.overlays];
+
+   
+    //loop through all of the annotations and add the overlays
+    
+    
+    for (int i = 0; i < self.zombieHandler.zombies.count; i++) {
+        Zombie* zombie = [self.zombieHandler.zombies objectAtIndex:i];
+        if (zombie.zombieState.currentState == ZombieStateChasing)
+        {
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
+            [circle  setTitle:@"ZombieChase"];
+            ////[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+                
+                [self.mapView addOverlay:circle];
+                
+            //}];
+        }
+        else if (zombie.zombieState.currentState == ZombieStateAllerted)
+        {
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
+            [circle  setTitle:@"ZombieAlert"];
+            //[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+                
+                [self.mapView addOverlay:circle];
+                
+           // }];
+        }
+    }
+   // [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+   // }];
+
+
+    
+    //dispatch_async(update_loop, ^{
+        if (self.zombieHandler)
+            [self.zombieHandler update:self.mapView.userLocation.coordinate];
+        
+   // });
     // NSLog(@"updating");
-    if (self.zombieHandler)
-        [self.zombieHandler update:self.mapView.userLocation.coordinate];
+    
+    
     
     [self performSelector:@selector(update) withObject:self afterDelay:1/30.0f ];
 }
@@ -98,7 +141,7 @@
         MKCoordinateRegion region =  [self.mapView region];
         double latDelta =  region.span.latitudeDelta;
         double lngDelta = region.span.longitudeDelta;
-      //  NSLog(@"Resize: latDelta %f : lng Delta %f", latDelta, lngDelta);
+        //  NSLog(@"Resize: latDelta %f : lng Delta %f", latDelta, lngDelta);
         
         double zoomLevel = (latDelta+lngDelta)/2;
         double scale = 1.0-zoomLevel;
@@ -115,6 +158,25 @@
 
 #pragma mark -
 #pragma mark MapView
+
+
+
+- (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+    //base the overlay on accuracy
+    
+    if ([overlay.title isEqualToString:@"ZombieAlert"])
+        circleView.fillColor = [UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:0.2];
+    else if ([overlay.title isEqualToString:@"ZombieChase"])
+        circleView.fillColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.2];
+    else
+            circleView.fillColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.2];
+    
+    [self.overlays addObject:overlay];
+    //self.m_CircleOverlay = overlay;
+    return circleView;
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -215,7 +277,7 @@
         MKUserLocation* userLocation = self.mapView.userLocation;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 2000, 2000);
         [self.mapView setRegion:region animated:YES];
-       
+        
         
         //now we know where are (roughly) we can generate the zomboids
         CLLocationCoordinate2D  location = userLocation.coordinate;
@@ -227,7 +289,7 @@
         
         //no need to initalise player annotation as we are using the user view
         
-       
+        
         
         //finally get cracking!
         [self update];

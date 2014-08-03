@@ -10,8 +10,15 @@
 
 @implementation Zombie
 
-#define VISIBILITY 500
-#define KPH        12.0
+#define ALERT_VISIBILITY 1000
+#define CHASE_VISIBILITY 700
+#define ATTACK_VISIBILITY 5
+
+#define KPH_CHASING        12.0
+#define KPH_WANDERING       3.0
+#define KPH_ATTACKING       5.0
+#define KPH_ALERTED           7.0
+
 #define FPS        30.0
 
 -(id) initWithPosition:(CLLocationCoordinate2D) position
@@ -26,37 +33,37 @@
 -(void) update:(CLLocationCoordinate2D) userLoc
 {
     
-    self.canSeeUser = [self checkIfCanSeeUser:userLoc];
-    if (self.canSeeUser)
+    [self checkIfCanSeeUser:userLoc];
+    BOOL requiresMovementTowardsUser = NO;
+    float finalMovement = 0.0;
+    if (self.zombieState.currentState == ZombieStateAttacking)
     {
-       // NSLog(@"Zombie can see user");
-        //assuming we are updating at 30 fps
-        //we need to send the zomboid towards the user at the
-        //appropriate speed
-        
-        // TODO make this not be so awfully written
-        float speedInMetresPerHour = KPH*1000;
+        requiresMovementTowardsUser = YES;
+        float speedInMetresPerHour = KPH_ATTACKING*1000;
         float speedInMetresPerMinute = speedInMetresPerHour/60.0f;
         float speedInMetresPerSecond = (speedInMetresPerMinute/60.0f);
-        float finalMovement = speedInMetresPerSecond/FPS;
-        
-        //so we are moving finalMovement (meters) per second so move the zombie towards him at that pace
-        
-        CLLocation* userLocation = [[CLLocation alloc] initWithLatitude:userLoc.latitude longitude:userLoc.longitude];
-        CLLocation* zombLocation = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
-        
-        double bearing = [MathHelpers bearingToLocation:userLocation   startLoc:zombLocation];
-
-        CLLocationCoordinate2D newLocation = [MathHelpers coordinateFromCoord:zombLocation.coordinate atDistanceKm:finalMovement/1000 atBearingDegrees:bearing];
-        
-        [self.annotation setCoordinate:newLocation];
-        self.currentPosition = newLocation;
-        
-        self.bearingToUser = bearing;
-        
-        self.zombieState = [[ZombieState alloc]initWithState:ZombieStateChasing];
+        finalMovement = speedInMetresPerSecond/FPS;
     }
-    else if(self.bearingToUser == -1.0){
+    else if (self.zombieState.currentState == ZombieStateChasing)
+    {
+        requiresMovementTowardsUser = YES;
+        float speedInMetresPerHour = KPH_CHASING*1000;
+        float speedInMetresPerMinute = speedInMetresPerHour/60.0f;
+        float speedInMetresPerSecond = (speedInMetresPerMinute/60.0f);
+        finalMovement = speedInMetresPerSecond/FPS;
+        
+    }
+    else if (self.zombieState.currentState == ZombieStateAllerted)
+    {
+        requiresMovementTowardsUser = YES;
+        requiresMovementTowardsUser = YES;
+        float speedInMetresPerHour = KPH_ALERTED*1000;
+        float speedInMetresPerMinute = speedInMetresPerHour/60.0f;
+        float speedInMetresPerSecond = (speedInMetresPerMinute/60.0f);
+        finalMovement = speedInMetresPerSecond/FPS;
+    }
+    else if (self.zombieState.currentState == ZombieStateWandering)
+    {
         CLLocation* userLocation = [[CLLocation alloc] initWithLatitude:userLoc.latitude longitude:userLoc.longitude];
         CLLocation* zombLocation = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
         
@@ -64,23 +71,44 @@
         self.bearingToUser = bearing;
     }
     else{
-        //set back to wandering
-        self.zombieState = [[ZombieState alloc]initWithState:ZombieStateWandering];
-
+        
     }
+    
+    if (requiresMovementTowardsUser)
+    {
+        CLLocation* userLocation = [[CLLocation alloc] initWithLatitude:userLoc.latitude longitude:userLoc.longitude];
+        CLLocation* zombLocation = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
+        
+        double bearing = [MathHelpers bearingToLocation:userLocation   startLoc:zombLocation];
+        
+        CLLocationCoordinate2D newLocation = [MathHelpers coordinateFromCoord:zombLocation.coordinate atDistanceKm:finalMovement/1000 atBearingDegrees:bearing];
+        
+        [self.annotation setCoordinate:newLocation];
+        self.currentPosition = newLocation;
+        
+        self.bearingToUser = bearing;
+    }
+    
+    
+  
     
 }
 
--(BOOL) checkIfCanSeeUser:(CLLocationCoordinate2D) userLocation
+-(void) checkIfCanSeeUser:(CLLocationCoordinate2D) userLocation
 {
     CLLocation* userLoc = [[CLLocation alloc] initWithLatitude:userLocation.latitude longitude:userLocation.longitude];
     CLLocation* zombLoc = [[CLLocation alloc] initWithLatitude:self.currentPosition .latitude longitude:self.currentPosition .longitude];
     double distanceMeters = [zombLoc distanceFromLocation:userLoc];
     
-    if (distanceMeters < VISIBILITY)
-        return  YES;
     
-    return NO;
+    if(distanceMeters < ATTACK_VISIBILITY)
+        self.zombieState.currentState = ZombieStateAttacking;
+    else if (distanceMeters < CHASE_VISIBILITY)
+        self.zombieState.currentState = ZombieStateChasing;
+    else if (distanceMeters < ALERT_VISIBILITY)
+        self.zombieState.currentState = ZombieStateAllerted;
+    else
+        self.zombieState.currentState = ZombieStateWandering;
 }
 
 @end

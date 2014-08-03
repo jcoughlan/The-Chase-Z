@@ -12,13 +12,13 @@
 #define SAFE_ROOM_DISTANCE 3000
 
 //only draw zomboids to x metres
-#define MAP_BOUNDS 20000
+#define MAP_BOUNDS 1000
 
 //only allow max x % of the map to be covered in zomboids
-#define MAX_DENSITY 0.05
+#define MAX_DENSITY 0.015
 
 //ensure min of x % is covered by zomboids
-#define MIN_DENSITY 0.025
+#define MIN_DENSITY 0.005
 
 @implementation ZombieHandler : NSObject
 
