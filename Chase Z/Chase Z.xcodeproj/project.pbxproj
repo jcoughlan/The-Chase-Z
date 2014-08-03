@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271C6E9F198E9751000C9532 /* ZombieState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6E9E198E9751000C9532 /* ZombieState.m */; };
+		271C6EA2198E975F000C9532 /* PlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6EA1198E975F000C9532 /* PlayerState.m */; };
 		2750DB21198D777E00E482FA /* SafeRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB20198D777E00E482FA /* SafeRoom.m */; };
 		2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB23198D7AB600E482FA /* SafeRoomAnnotation.m */; };
 		2750DB26198D7D8A00E482FA /* saferoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2750DB25198D7D8A00E482FA /* saferoom.png */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271C6E9D198E9751000C9532 /* ZombieState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZombieState.h; path = "Chase Z/ZombieState.h"; sourceTree = "<group>"; };
+		271C6E9E198E9751000C9532 /* ZombieState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZombieState.m; path = "Chase Z/ZombieState.m"; sourceTree = "<group>"; };
+		271C6EA0198E975F000C9532 /* PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerState.h; path = "Chase Z/PlayerState.h"; sourceTree = "<group>"; };
+		271C6EA1198E975F000C9532 /* PlayerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerState.m; path = "Chase Z/PlayerState.m"; sourceTree = "<group>"; };
 		2750DB1F198D777E00E482FA /* SafeRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeRoom.h; sourceTree = "<group>"; };
 		2750DB20198D777E00E482FA /* SafeRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeRoom.m; sourceTree = "<group>"; };
 		2750DB22198D7AB600E482FA /* SafeRoomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafeRoomAnnotation.h; path = ../SafeRoomAnnotation.h; sourceTree = "<group>"; };
@@ -104,6 +110,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271C6EA3198E9B75000C9532 /* StateMachines */ = {
+			isa = PBXGroup;
+			children = (
+				271C6E9D198E9751000C9532 /* ZombieState.h */,
+				271C6E9E198E9751000C9532 /* ZombieState.m */,
+				271C6EA0198E975F000C9532 /* PlayerState.h */,
+				271C6EA1198E975F000C9532 /* PlayerState.m */,
+			);
+			name = StateMachines;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		2750DB5F198D868500E482FA /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +232,7 @@
 				2750DB5F198D868500E482FA /* GameObjects */,
 				276C97A8198980AA00086AB6 /* Main.storyboard */,
 				276C97AB198980AA00086AB6 /* Images.xcassets */,
+				271C6EA3198E9B75000C9532 /* StateMachines */,
 				276C979A198980AA00086AB6 /* Supporting Files */,
 			);
 			path = "Chase Z";
@@ -349,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271C6EA2198E975F000C9532 /* PlayerState.m in Sources */,
 				2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */,
 				275B8F7E198D1364001218DD /* ZombieAnnotation.m in Sources */,
 				277E9761198BCF7300A1EA74 /* ZombieHandler.m in Sources */,
@@ -360,6 +380,7 @@
 				276C97A7198980AA00086AB6 /* GameViewController.m in Sources */,
 				2750DB2C198D81AA00E482FA /* PlayerAnnotation.m in Sources */,
 				275B8F7B198D0FD6001218DD /* LatLon.m in Sources */,
+				271C6E9F198E9751000C9532 /* ZombieState.m in Sources */,
 				276C979D198980AA00086AB6 /* main.m in Sources */,
 				275B8F78198D082E001218DD /* MathHelpers.m in Sources */,
 			);

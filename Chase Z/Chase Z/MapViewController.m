@@ -38,6 +38,7 @@
     
     UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
     pinchRecognizer.delegate = self;
+    
     [self.mapView addGestureRecognizer:pinchRecognizer];
 }
 
@@ -86,40 +87,25 @@
     MKMapView *aMapView = (MKMapView *)pinchRecognizer.view;
     
     for (id <MKAnnotation>annotation in aMapView.annotations) {
-        // if it's the user location, just return nil.
-        //  if ([annotation isKindOfClass:[MKUserLocation class]])
-        
         MKAnnotationView *pinView = [aMapView viewForAnnotation:annotation];
-        
         [self formatAnnotationView:pinView forMapView:aMapView];
-        
     }
 }
 
 - (void)formatAnnotationView:(MKAnnotationView *)pinView forMapView:(MKMapView *)aMapView {
     if (pinView)
     {
-                MKCoordinateRegion region =  [self.mapView region];
-                double latDelta =  region.span.latitudeDelta;
-                double lngDelta = region.span.longitudeDelta;
-                NSLog(@"Resize: latDelta %f : lng Delta %f", latDelta, lngDelta);
+        MKCoordinateRegion region =  [self.mapView region];
+        double latDelta =  region.span.latitudeDelta;
+        double lngDelta = region.span.longitudeDelta;
+      //  NSLog(@"Resize: latDelta %f : lng Delta %f", latDelta, lngDelta);
         
-                double zoomLevel = (latDelta+lngDelta)/2;
-                double scale = 1.0-zoomLevel;
-                scale *= 0.4;
+        double zoomLevel = (latDelta+lngDelta)/2;
+        double scale = 1.0-zoomLevel;
+        scale *= 0.55;
         
-        //        double scale = -1 * sqrt((double)(1 - pow((zoomLevel/20.0), 2.0))) + 1.1; // This is a circular scale function where at zoom level 0 scale is 0.1 and at zoom level 20 scale is 1.1
-        
-        //        // Option #1
-               pinView.transform = CGAffineTransformMakeScale(scale, scale);
-        
-                // Option #2
-//                UIImage *pinImage = [UIImage imageNamed:@"YOUR_IMAGE_NAME_HERE"];
-//                pinView.image = [pinImage resizedImage:CGSizeMake(pinImage.size.width * scale, pinImage.size.height * scale) interpolationQuality:kCGInterpolationHigh];
-            }
-        
-       // NSLog(@"resize pin");
-    
+        pinView.transform = CGAffineTransformMakeScale(scale, scale);
+    }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
@@ -147,6 +133,9 @@
         pinView.annotation = annotation;
         
         pinView.image = [UIImage imageNamed:@"zombie.png"];
+        double scale = 0.4;
+        
+        pinView.transform = CGAffineTransformMakeScale(scale, scale);
         
         pinView.hidden = NO;
         pinView.draggable = NO;
@@ -170,6 +159,9 @@
         pinView.annotation = annotation;
         
         pinView.image = [UIImage imageNamed:@"saferoom.png"];
+        double scale = 0.4;
+        
+        pinView.transform = CGAffineTransformMakeScale(scale, scale);
         
         pinView.hidden = NO;
         pinView.draggable = NO;
@@ -193,6 +185,9 @@
         pinView.annotation = annotation;
         
         pinView.image = [UIImage imageNamed:@"player.png"];
+        double scale = 0.4;
+        
+        pinView.transform = CGAffineTransformMakeScale(scale, scale);
         
         pinView.hidden = NO;
         pinView.draggable = NO;
@@ -220,13 +215,7 @@
         MKUserLocation* userLocation = self.mapView.userLocation;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 2000, 2000);
         [self.mapView setRegion:region animated:YES];
-        MKMapView *aMapView = self.mapView;
-        
-        //scale our annotations to current region
-        for (id <MKAnnotation>annotation in aMapView.annotations) {
-            MKAnnotationView *pinView = [aMapView viewForAnnotation:annotation];
-            [self formatAnnotationView:pinView forMapView:aMapView];
-        }
+       
         
         //now we know where are (roughly) we can generate the zomboids
         CLLocationCoordinate2D  location = userLocation.coordinate;
@@ -238,6 +227,7 @@
         
         //no need to initalise player annotation as we are using the user view
         
+       
         
         //finally get cracking!
         [self update];

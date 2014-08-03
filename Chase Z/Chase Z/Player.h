@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-
+#import "PlayerState.h"
 @interface Player :NSObject
 
 -(id)initWithLocation: (CLLocationCoordinate2D) location;
 -(void) update:(CLLocationCoordinate2D) playerLoc;
 @property CLLocationCoordinate2D playerLocation;
 @property double hitPoints;
+@property PlayerState* playerState;
 @end

@@ -19,6 +19,7 @@
     self = [self init];
     self.currentPosition = position;
     self.bearingToUser = -1.0;
+    self.zombieState = [[ZombieState alloc]initWithState:ZombieStateWandering];
     return self;
 }
 
@@ -52,6 +53,8 @@
         self.currentPosition = newLocation;
         
         self.bearingToUser = bearing;
+        
+        self.zombieState = [[ZombieState alloc]initWithState:ZombieStateChasing];
     }
     else if(self.bearingToUser == -1.0){
         CLLocation* userLocation = [[CLLocation alloc] initWithLatitude:userLoc.latitude longitude:userLoc.longitude];
@@ -59,6 +62,11 @@
         
         double bearing = [MathHelpers bearingToLocation:userLocation   startLoc:zombLocation];
         self.bearingToUser = bearing;
+    }
+    else{
+        //set back to wandering
+        self.zombieState = [[ZombieState alloc]initWithState:ZombieStateWandering];
+
     }
     
 }

@@ -16,6 +16,7 @@
     self = [self init];
     self.playerLocation = location;
     self.hitPoints = HIT_POINTS;
+    self.playerState = [[PlayerState alloc]initWithState:PlayerStateWaitingForInitialisation];
     return self;
 }
 

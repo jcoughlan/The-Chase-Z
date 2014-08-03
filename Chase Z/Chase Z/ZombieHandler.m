@@ -82,8 +82,12 @@
     double bearing = [MathHelpers randomFloatBetween:0.0 and:360.0];
     CLLocationCoordinate2D safeRoomLocation = [MathHelpers coordinateFromCoord:self.userLocation atDistanceKm:SAFE_ROOM_DISTANCE/1000.0 atBearingDegrees:bearing];
     self.safeRoom = [[SafeRoom alloc] initWithLocation:safeRoomLocation];
-    
+    CLLocation* userLoc = [[CLLocation alloc] initWithLatitude:self.userLocation.latitude longitude:self.userLocation.longitude];
+    CLLocation* safeLoc = [[CLLocation alloc] initWithLatitude:safeRoomLocation.latitude longitude:safeRoomLocation.longitude];
+    double distanceMeters = [safeLoc distanceFromLocation:userLoc];
+     NSLog(@"safe room distance from user %f", distanceMeters);
     self.player = [[Player alloc] initWithLocation:self.userLocation];
+    
 }
 
 -(void) update:(CLLocationCoordinate2D) userLoc

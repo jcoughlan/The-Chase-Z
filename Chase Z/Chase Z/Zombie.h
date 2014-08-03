@@ -11,6 +11,7 @@
 #import "LatLon.h"
 #import "ZombieAnnotation.h"
 #import "MathHelpers.h"
+#import "ZombieState.h"
 @interface Zombie : NSObject
 
 -(id) initWithPosition:(CLLocationCoordinate2D) position;
@@ -19,4 +20,5 @@
 @property ZombieAnnotation* annotation;
 @property BOOL canSeeUser;
 @property double bearingToUser;
+@property ZombieState* zombieState;
 @end
