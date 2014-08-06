@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270AE8C81992B0B3007D3D8A /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */; };
+		270AE8C91992B0B3007D3D8A /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C71992B0B3007D3D8A /* tile_floor.png */; };
 		271C6E9F198E9751000C9532 /* ZombieState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6E9E198E9751000C9532 /* ZombieState.m */; };
 		271C6EA2198E975F000C9532 /* PlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6EA1198E975F000C9532 /* PlayerState.m */; };
 		2750DB21198D777E00E482FA /* SafeRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB20198D777E00E482FA /* SafeRoom.m */; };
@@ -21,9 +23,8 @@
 		275B8F7E198D1364001218DD /* ZombieAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 275B8F7D198D1364001218DD /* ZombieAnnotation.m */; };
 		276C979D198980AA00086AB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C979C198980AA00086AB6 /* main.m */; };
 		276C97A0198980AA00086AB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C979F198980AA00086AB6 /* AppDelegate.m */; };
-		276C97A2198980AA00086AB6 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 276C97A1198980AA00086AB6 /* Shader.fsh */; };
-		276C97A4198980AA00086AB6 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 276C97A3198980AA00086AB6 /* Shader.vsh */; };
-		276C97A7198980AA00086AB6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C97A6198980AA00086AB6 /* GameViewController.m */; };
+		276C97A2198980AA00086AB6 /* ShaderFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 276C97A1198980AA00086AB6 /* ShaderFragment.glsl */; };
+		276C97A4198980AA00086AB6 /* ShaderVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 276C97A3198980AA00086AB6 /* ShaderVertex.glsl */; };
 		276C97AA198980AA00086AB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C97A8198980AA00086AB6 /* Main.storyboard */; };
 		276C97AC198980AA00086AB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C97AB198980AA00086AB6 /* Images.xcassets */; };
 		276C97B8198980AB00086AB6 /* Chase_ZTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C97B7198980AB00086AB6 /* Chase_ZTests.m */; };
@@ -32,6 +33,16 @@
 		277E9761198BCF7300A1EA74 /* ZombieHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 277E9760198BCF7300A1EA74 /* ZombieHandler.m */; };
 		2791F3CD198D56A7005BF42F /* zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = 2791F3CC198D56A7005BF42F /* zombie.png */; };
 		27AF0AD7198ADE1500BE92B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AF0AD6198ADE1500BE92B6 /* CoreLocation.framework */; };
+		27C7329A199295FB00B619E5 /* OpenGLDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C73299199295FB00B619E5 /* OpenGLDebug.m */; };
+		27C7329E199296F400B619E5 /* OpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C7329D199296F400B619E5 /* OpenGLRenderer.m */; };
+		27C732A11992A5D800B619E5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C732A01992A5D800B619E5 /* OpenGLES.framework */; };
+		27C732A31992A5DF00B619E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C732A21992A5DF00B619E5 /* QuartzCore.framework */; };
+		27C732A61992A76B00B619E5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732A51992A76B00B619E5 /* GameViewController.m */; };
+		27C732A91992A7BA00B619E5 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732A81992A7BA00B619E5 /* OpenGLView.m */; };
+		27C732B51992A8C600B619E5 /* CC3Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732AC1992A8C600B619E5 /* CC3Foundation.m */; };
+		27C732B61992A8C600B619E5 /* CC3GLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732AE1992A8C600B619E5 /* CC3GLMatrix.m */; };
+		27C732B71992A8C600B619E5 /* CC3Kazmath.c in Sources */ = {isa = PBXBuildFile; fileRef = 27C732AF1992A8C600B619E5 /* CC3Kazmath.c */; };
+		27C732B81992A8C600B619E5 /* CC3Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732B31992A8C600B619E5 /* CC3Math.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item_powerup_fish.png; path = 3dhelpers/item_powerup_fish.png; sourceTree = SOURCE_ROOT; };
+		270AE8C71992B0B3007D3D8A /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile_floor.png; path = 3dhelpers/tile_floor.png; sourceTree = SOURCE_ROOT; };
 		271C6E9D198E9751000C9532 /* ZombieState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZombieState.h; path = "Chase Z/ZombieState.h"; sourceTree = "<group>"; };
 		271C6E9E198E9751000C9532 /* ZombieState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZombieState.m; path = "Chase Z/ZombieState.m"; sourceTree = "<group>"; };
 		271C6EA0198E975F000C9532 /* PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerState.h; path = "Chase Z/PlayerState.h"; sourceTree = "<group>"; };
@@ -72,10 +85,8 @@
 		276C979C198980AA00086AB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276C979E198980AA00086AB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		276C979F198980AA00086AB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		276C97A1198980AA00086AB6 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		276C97A3198980AA00086AB6 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		276C97A5198980AA00086AB6 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		276C97A6198980AA00086AB6 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		276C97A1198980AA00086AB6 /* ShaderFragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ShaderFragment.glsl; path = Shaders/ShaderFragment.glsl; sourceTree = "<group>"; };
+		276C97A3198980AA00086AB6 /* ShaderVertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ShaderVertex.glsl; path = Shaders/ShaderVertex.glsl; sourceTree = "<group>"; };
 		276C97A9198980AA00086AB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276C97AB198980AA00086AB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		276C97B1198980AA00086AB6 /* Chase ZTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chase ZTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +99,27 @@
 		277E9760198BCF7300A1EA74 /* ZombieHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZombieHandler.m; sourceTree = "<group>"; };
 		2791F3CC198D56A7005BF42F /* zombie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie.png; sourceTree = "<group>"; };
 		27AF0AD6198ADE1500BE92B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27C73299199295FB00B619E5 /* OpenGLDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLDebug.m; sourceTree = "<group>"; };
+		27C7329B1992962C00B619E5 /* OpenGLDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLDebug.h; sourceTree = "<group>"; };
+		27C7329C199296F400B619E5 /* OpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
+		27C7329D199296F400B619E5 /* OpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRenderer.m; sourceTree = "<group>"; };
+		27C7329F1992A39B00B619E5 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		27C732A01992A5D800B619E5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		27C732A21992A5DF00B619E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		27C732A41992A76B00B619E5 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = ../GameViewController.h; sourceTree = "<group>"; };
+		27C732A51992A76B00B619E5 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = ../GameViewController.m; sourceTree = "<group>"; };
+		27C732A71992A7BA00B619E5 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		27C732A81992A7BA00B619E5 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		27C732AB1992A8C600B619E5 /* CC3Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3Foundation.h; path = 3dhelpers/CC3Foundation.h; sourceTree = SOURCE_ROOT; };
+		27C732AC1992A8C600B619E5 /* CC3Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CC3Foundation.m; path = 3dhelpers/CC3Foundation.m; sourceTree = SOURCE_ROOT; };
+		27C732AD1992A8C600B619E5 /* CC3GLMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3GLMatrix.h; path = 3dhelpers/CC3GLMatrix.h; sourceTree = SOURCE_ROOT; };
+		27C732AE1992A8C600B619E5 /* CC3GLMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CC3GLMatrix.m; path = 3dhelpers/CC3GLMatrix.m; sourceTree = SOURCE_ROOT; };
+		27C732AF1992A8C600B619E5 /* CC3Kazmath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = CC3Kazmath.c; path = 3dhelpers/CC3Kazmath.c; sourceTree = SOURCE_ROOT; };
+		27C732B01992A8C600B619E5 /* CC3Kazmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3Kazmath.h; path = 3dhelpers/CC3Kazmath.h; sourceTree = SOURCE_ROOT; };
+		27C732B11992A8C600B619E5 /* CC3Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3Logging.h; path = 3dhelpers/CC3Logging.h; sourceTree = SOURCE_ROOT; };
+		27C732B21992A8C600B619E5 /* CC3Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3Math.h; path = 3dhelpers/CC3Math.h; sourceTree = SOURCE_ROOT; };
+		27C732B31992A8C600B619E5 /* CC3Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CC3Math.m; path = 3dhelpers/CC3Math.m; sourceTree = SOURCE_ROOT; };
+		27C732B41992A8C600B619E5 /* ccTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ccTypes.h; path = 3dhelpers/ccTypes.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C732A31992A5DF00B619E5 /* QuartzCore.framework in Frameworks */,
+				27C732A11992A5D800B619E5 /* OpenGLES.framework in Frameworks */,
 				27AF0AD7198ADE1500BE92B6 /* CoreLocation.framework in Frameworks */,
 				276C97C5198982BF00086AB6 /* MapKit.framework in Frameworks */,
 			);
@@ -140,10 +174,10 @@
 		2750DB60198D86B300E482FA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				27C732A41992A76B00B619E5 /* GameViewController.h */,
+				27C732A51992A76B00B619E5 /* GameViewController.m */,
 				276C97C1198981F000086AB6 /* MapViewController.h */,
 				276C97C2198981F000086AB6 /* MapViewController.m */,
-				276C97A5198980AA00086AB6 /* GameViewController.h */,
-				276C97A6198980AA00086AB6 /* GameViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +198,8 @@
 		2750DB62198D86EA00E482FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */,
+				270AE8C71992B0B3007D3D8A /* tile_floor.png */,
 				2750DB5D198D83FD00E482FA /* player.png */,
 				2750DB25198D7D8A00E482FA /* saferoom.png */,
 				2791F3CC198D56A7005BF42F /* zombie.png */,
@@ -174,8 +210,8 @@
 		2750DB63198D86F600E482FA /* Shader */ = {
 			isa = PBXGroup;
 			children = (
-				276C97A1198980AA00086AB6 /* Shader.fsh */,
-				276C97A3198980AA00086AB6 /* Shader.vsh */,
+				276C97A1198980AA00086AB6 /* ShaderFragment.glsl */,
+				276C97A3198980AA00086AB6 /* ShaderVertex.glsl */,
 			);
 			name = Shader;
 			sourceTree = "<group>";
@@ -203,6 +239,8 @@
 		276C978E198980AA00086AB6 = {
 			isa = PBXGroup;
 			children = (
+				27C732A21992A5DF00B619E5 /* QuartzCore.framework */,
+				27C732A01992A5D800B619E5 /* OpenGLES.framework */,
 				27AF0AD6198ADE1500BE92B6 /* CoreLocation.framework */,
 				276C97C4198982BF00086AB6 /* MapKit.framework */,
 				276C9799198980AA00086AB6 /* Chase Z */,
@@ -223,6 +261,8 @@
 		276C9799198980AA00086AB6 /* Chase Z */ = {
 			isa = PBXGroup;
 			children = (
+				27C732AA1992A85F00B619E5 /* Helpers */,
+				27C732941992956C00B619E5 /* 3D */,
 				2750DB65198D871E00E482FA /* Helpers */,
 				2750DB64198D870400E482FA /* AppDelegate */,
 				2750DB63198D86F600E482FA /* Shader */,
@@ -262,6 +302,38 @@
 				276C97B6198980AB00086AB6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27C732941992956C00B619E5 /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+				27C7329B1992962C00B619E5 /* OpenGLDebug.h */,
+				27C73299199295FB00B619E5 /* OpenGLDebug.m */,
+				27C7329C199296F400B619E5 /* OpenGLRenderer.h */,
+				27C7329D199296F400B619E5 /* OpenGLRenderer.m */,
+				27C7329F1992A39B00B619E5 /* Cube.h */,
+				27C732A71992A7BA00B619E5 /* OpenGLView.h */,
+				27C732A81992A7BA00B619E5 /* OpenGLView.m */,
+			);
+			name = 3D;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		27C732AA1992A85F00B619E5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				27C732AB1992A8C600B619E5 /* CC3Foundation.h */,
+				27C732AC1992A8C600B619E5 /* CC3Foundation.m */,
+				27C732AD1992A8C600B619E5 /* CC3GLMatrix.h */,
+				27C732AE1992A8C600B619E5 /* CC3GLMatrix.m */,
+				27C732AF1992A8C600B619E5 /* CC3Kazmath.c */,
+				27C732B01992A8C600B619E5 /* CC3Kazmath.h */,
+				27C732B11992A8C600B619E5 /* CC3Logging.h */,
+				27C732B21992A8C600B619E5 /* CC3Math.h */,
+				27C732B31992A8C600B619E5 /* CC3Math.m */,
+				27C732B41992A8C600B619E5 /* ccTypes.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,12 +417,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750DB5E198D83FD00E482FA /* player.png in Resources */,
+				270AE8C81992B0B3007D3D8A /* item_powerup_fish.png in Resources */,
 				276C97AA198980AA00086AB6 /* Main.storyboard in Resources */,
 				276C97AC198980AA00086AB6 /* Images.xcassets in Resources */,
-				276C97A4198980AA00086AB6 /* Shader.vsh in Resources */,
+				276C97A4198980AA00086AB6 /* ShaderVertex.glsl in Resources */,
 				2750DB26198D7D8A00E482FA /* saferoom.png in Resources */,
 				2791F3CD198D56A7005BF42F /* zombie.png in Resources */,
-				276C97A2198980AA00086AB6 /* Shader.fsh in Resources */,
+				270AE8C91992B0B3007D3D8A /* tile_floor.png in Resources */,
+				276C97A2198980AA00086AB6 /* ShaderFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,19 +442,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C732B71992A8C600B619E5 /* CC3Kazmath.c in Sources */,
 				271C6EA2198E975F000C9532 /* PlayerState.m in Sources */,
 				2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */,
 				275B8F7E198D1364001218DD /* ZombieAnnotation.m in Sources */,
 				277E9761198BCF7300A1EA74 /* ZombieHandler.m in Sources */,
+				27C7329E199296F400B619E5 /* OpenGLRenderer.m in Sources */,
+				27C7329A199295FB00B619E5 /* OpenGLDebug.m in Sources */,
 				276C97C3198981F000086AB6 /* MapViewController.m in Sources */,
+				27C732A91992A7BA00B619E5 /* OpenGLView.m in Sources */,
 				2750DB29198D7EAD00E482FA /* Player.m in Sources */,
+				27C732A61992A76B00B619E5 /* GameViewController.m in Sources */,
 				2750DB21198D777E00E482FA /* SafeRoom.m in Sources */,
+				27C732B51992A8C600B619E5 /* CC3Foundation.m in Sources */,
 				276C97A0198980AA00086AB6 /* AppDelegate.m in Sources */,
+				27C732B61992A8C600B619E5 /* CC3GLMatrix.m in Sources */,
 				275B8F75198D056F001218DD /* Zombie.m in Sources */,
-				276C97A7198980AA00086AB6 /* GameViewController.m in Sources */,
 				2750DB2C198D81AA00E482FA /* PlayerAnnotation.m in Sources */,
 				275B8F7B198D0FD6001218DD /* LatLon.m in Sources */,
 				271C6E9F198E9751000C9532 /* ZombieState.m in Sources */,
+				27C732B81992A8C600B619E5 /* CC3Math.m in Sources */,
 				276C979D198980AA00086AB6 /* main.m in Sources */,
 				275B8F78198D082E001218DD /* MathHelpers.m in Sources */,
 			);
@@ -499,6 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = "Chase Z/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = "Chase Z/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

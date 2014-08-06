@@ -73,35 +73,35 @@
 {
     dispatch_queue_t update_loop = dispatch_queue_create("chase_z_update_loop", NULL);
     //clear the old overlays
-    [self.mapView removeOverlays:self.overlays];
-
-   
-    //loop through all of the annotations and add the overlays
-    
-    
-    for (int i = 0; i < self.zombieHandler.zombies.count; i++) {
-        Zombie* zombie = [self.zombieHandler.zombies objectAtIndex:i];
-        if (zombie.zombieState.currentState == ZombieStateChasing)
-        {
-            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
-            [circle  setTitle:@"ZombieChase"];
-            ////[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-                
-                [self.mapView addOverlay:circle];
-                
-            //}];
-        }
-        else if (zombie.zombieState.currentState == ZombieStateAllerted)
-        {
-            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
-            [circle  setTitle:@"ZombieAlert"];
-            //[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-                
-                [self.mapView addOverlay:circle];
-                
-           // }];
-        }
-    }
+//    [self.mapView removeOverlays:self.overlays];
+//
+//   
+//    //loop through all of the annotations and add the overlays
+//    
+//    
+//    for (int i = 0; i < self.zombieHandler.zombies.count; i++) {
+//        Zombie* zombie = [self.zombieHandler.zombies objectAtIndex:i];
+//        if (zombie.zombieState.currentState == ZombieStateChasing)
+//        {
+//            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
+//            [circle  setTitle:@"ZombieChase"];
+//            ////[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+//                
+//                [self.mapView addOverlay:circle];
+//                
+//            //}];
+//        }
+//        else if (zombie.zombieState.currentState == ZombieStateAllerted)
+//        {
+//            MKCircle *circle = [MKCircle circleWithCenterCoordinate:zombie.currentPosition radius:100];
+//            [circle  setTitle:@"ZombieAlert"];
+//            //[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+//                
+//                [self.mapView addOverlay:circle];
+//                
+//           // }];
+//        }
+//    }
    // [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
    // }];
 

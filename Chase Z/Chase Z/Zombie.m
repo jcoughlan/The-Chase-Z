@@ -10,8 +10,8 @@
 
 @implementation Zombie
 
-#define ALERT_VISIBILITY 1000
-#define CHASE_VISIBILITY 700
+#define ALERT_VISIBILITY 800
+#define CHASE_VISIBILITY 400
 #define ATTACK_VISIBILITY 5
 
 #define KPH_CHASING        12.0
