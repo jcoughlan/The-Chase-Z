@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		270AE8C81992B0B3007D3D8A /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */; };
 		270AE8C91992B0B3007D3D8A /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C71992B0B3007D3D8A /* tile_floor.png */; };
+		270AE8CC1992C0D6007D3D8A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 270AE8CB1992C0D6007D3D8A /* Model.m */; };
 		271C6E9F198E9751000C9532 /* ZombieState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6E9E198E9751000C9532 /* ZombieState.m */; };
 		271C6EA2198E975F000C9532 /* PlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6EA1198E975F000C9532 /* PlayerState.m */; };
 		2750DB21198D777E00E482FA /* SafeRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB20198D777E00E482FA /* SafeRoom.m */; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item_powerup_fish.png; path = 3dhelpers/item_powerup_fish.png; sourceTree = SOURCE_ROOT; };
 		270AE8C71992B0B3007D3D8A /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile_floor.png; path = 3dhelpers/tile_floor.png; sourceTree = SOURCE_ROOT; };
+		270AE8CA1992C0D6007D3D8A /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		270AE8CB1992C0D6007D3D8A /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		271C6E9D198E9751000C9532 /* ZombieState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZombieState.h; path = "Chase Z/ZombieState.h"; sourceTree = "<group>"; };
 		271C6E9E198E9751000C9532 /* ZombieState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZombieState.m; path = "Chase Z/ZombieState.m"; sourceTree = "<group>"; };
 		271C6EA0198E975F000C9532 /* PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerState.h; path = "Chase Z/PlayerState.h"; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				27C7329F1992A39B00B619E5 /* Cube.h */,
 				27C732A71992A7BA00B619E5 /* OpenGLView.h */,
 				27C732A81992A7BA00B619E5 /* OpenGLView.m */,
+				270AE8CA1992C0D6007D3D8A /* Model.h */,
+				270AE8CB1992C0D6007D3D8A /* Model.m */,
 			);
 			name = 3D;
 			path = ..;
@@ -457,6 +462,7 @@
 				27C732B51992A8C600B619E5 /* CC3Foundation.m in Sources */,
 				276C97A0198980AA00086AB6 /* AppDelegate.m in Sources */,
 				27C732B61992A8C600B619E5 /* CC3GLMatrix.m in Sources */,
+				270AE8CC1992C0D6007D3D8A /* Model.m in Sources */,
 				275B8F75198D056F001218DD /* Zombie.m in Sources */,
 				2750DB2C198D81AA00E482FA /* PlayerAnnotation.m in Sources */,
 				275B8F7B198D0FD6001218DD /* LatLon.m in Sources */,

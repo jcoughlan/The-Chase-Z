@@ -14,87 +14,78 @@
 typedef struct {
     float Position[3];
     float Color[4];
-    float TexCoord[2]; // New
+    //float TexCoord[2]; // New
 } Vertex;
 
-/*const Vertex Vertices[] = {
- {{1, -1, 0}, {1, 0, 0, 1}},
- {{1, 1, 0}, {0, 1, 0, 1}},
- {{-1, 1, 0}, {0, 0, 1, 1}},
- {{-1, -1, 0}, {0, 0, 0, 1}}
+
+typedef struct {
+    float Vertex[2];
+} Line;
+
+
+const Vertex Vertices[] = {
+ {{1, -1, 0}, {1, 0, 0, 1}}
  };
- 
+
  const GLubyte Indices[] = {
- 0, 1, 2,
- 2, 3, 0
- };*/
+ 0, 1
+};
 
 #define TEX_COORD_MAX   4
 
-const Vertex Vertices[] = {
-    // Front
-    {{1, -1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{1, 1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{-1, 1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{-1, -1, 0}, {0, 0, 0, 1}, {0, 0}},
-    // Back
-    {{1, 1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{-1, -1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{1, -1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{-1, 1, -2}, {0, 0, 0, 1}, {0, 0}},
-    // Left
-    {{-1, -1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{-1, 1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{-1, 1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{-1, -1, -2}, {0, 0, 0, 1}, {0, 0}},
-    // Right
-    {{1, -1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{1, 1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{1, 1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{1, -1, 0}, {0, 0, 0, 1}, {0, 0}},
-    // Top
-    {{1, 1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{1, 1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{-1, 1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{-1, 1, 0}, {0, 0, 0, 1}, {0, 0}},
-    // Bottom
-    {{1, -1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
-    {{1, -1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
-    {{-1, -1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
-    {{-1, -1, -2}, {0, 0, 0, 1}, {0, 0}}
-};
-
-const GLubyte Indices[] = {
-    // Front
-    0, 1, 2,
-    2, 3, 0,
-    // Back
-    4, 5, 6,
-    6, 7, 4,
-    // Left
-    8, 9, 10,
-    10, 11, 8,
-    // Right
-    12, 13, 14,
-    14, 15, 12,
-    // Top
-    16, 17, 18,
-    18, 19, 16,
-    // Bottom
-    20, 21, 22,
-    22, 23, 20
-};
-
-const Vertex Vertices2[] = {
-    {{0.5, -0.5, 0.01}, {1, 1, 1, 1}, {1, 1}},
-    {{0.5, 0.5, 0.01}, {1, 1, 1, 1}, {1, 0}},
-    {{-0.5, 0.5, 0.01}, {1, 1, 1, 1}, {0, 0}},
-    {{-0.5, -0.5, 0.01}, {1, 1, 1, 1}, {0, 1}},
-};
-
-const GLubyte Indices2[] = {
-    1, 0, 2, 3
-};
+//const Vertex Vertices[] = {
+//    // Front
+//    {{1, -1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{1, 1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{-1, 1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{-1, -1, 0}, {0, 0, 0, 1}, {0, 0}},
+//    // Back
+//    {{1, 1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{-1, -1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{1, -1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{-1, 1, -2}, {0, 0, 0, 1}, {0, 0}},
+//    // Left
+//    {{-1, -1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{-1, 1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{-1, 1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{-1, -1, -2}, {0, 0, 0, 1}, {0, 0}},
+//    // Right
+//    {{1, -1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{1, 1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{1, 1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{1, -1, 0}, {0, 0, 0, 1}, {0, 0}},
+//    // Top
+//    {{1, 1, 0}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{1, 1, -2}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{-1, 1, -2}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{-1, 1, 0}, {0, 0, 0, 1}, {0, 0}},
+//    // Bottom
+//    {{1, -1, -2}, {1, 0, 0, 1}, {TEX_COORD_MAX, 0}},
+//    {{1, -1, 0}, {0, 1, 0, 1}, {TEX_COORD_MAX, TEX_COORD_MAX}},
+//    {{-1, -1, 0}, {0, 0, 1, 1}, {0, TEX_COORD_MAX}},
+//    {{-1, -1, -2}, {0, 0, 0, 1}, {0, 0}}
+//};
+//
+//const GLubyte Indices[] = {
+//    // Front
+//    0, 1, 2,
+//    2, 3, 0,
+//    // Back
+//    4, 5, 6,
+//    6, 7, 4,
+//    // Left
+//    8, 9, 10,
+//    10, 11, 8,
+//    // Right
+//    12, 13, 14,
+//    14, 15, 12,
+//    // Top
+//    16, 17, 18,
+//    18, 19, 16,
+//    // Bottom
+//    20, 21, 22,
+//    22, 23, 20
+//};
 
 + (Class)layerClass {
     return [CAEAGLLayer class];
@@ -226,22 +217,13 @@ const GLubyte Indices2[] = {
     glGenBuffers(1, &_indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
-    
-    glGenBuffers(1, &_vertexBuffer2);
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer2);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices2), Vertices2, GL_STATIC_DRAW);
-    
-    glGenBuffers(1, &_indexBuffer2);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer2);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices2), Indices2, GL_STATIC_DRAW);
-    
 }
 
 - (void)render:(CADisplayLink*)displayLink {
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
     
-    glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     
@@ -273,22 +255,8 @@ const GLubyte Indices2[] = {
     glUniform1i(_textureUniform, 0);
     
     // 3
-    glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer2);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer2);
-    
-    glActiveTexture(GL_TEXTURE0); // unneccc in practice
-    glBindTexture(GL_TEXTURE_2D, _fishTexture);
-    glUniform1i(_textureUniform, 0); // unnecc in practice
-    
-    glUniformMatrix4fv(_modelViewUniform, 1, 0, modelView.glMatrix);
-    
-    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-    glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) * 3));
-    glVertexAttribPointer(_texCoordSlot, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) * 7));
-    
-    glDrawElements(GL_TRIANGLE_STRIP, sizeof(Indices2)/sizeof(Indices2[0]), GL_UNSIGNED_BYTE, 0);
+    glDrawElements(GL_LINES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
+  
     
     [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
