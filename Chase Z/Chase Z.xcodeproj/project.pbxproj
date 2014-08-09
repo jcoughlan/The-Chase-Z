@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		270AE8C81992B0B3007D3D8A /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */; };
 		270AE8C91992B0B3007D3D8A /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 270AE8C71992B0B3007D3D8A /* tile_floor.png */; };
-		270AE8CC1992C0D6007D3D8A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 270AE8CB1992C0D6007D3D8A /* Model.m */; };
+		270AE8CC1992C0D6007D3D8A /* Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 270AE8CB1992C0D6007D3D8A /* Mesh.m */; };
 		271C6E9F198E9751000C9532 /* ZombieState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6E9E198E9751000C9532 /* ZombieState.m */; };
 		271C6EA2198E975F000C9532 /* PlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C6EA1198E975F000C9532 /* PlayerState.m */; };
 		2750DB21198D777E00E482FA /* SafeRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750DB20198D777E00E482FA /* SafeRoom.m */; };
@@ -35,7 +35,6 @@
 		2791F3CD198D56A7005BF42F /* zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = 2791F3CC198D56A7005BF42F /* zombie.png */; };
 		27AF0AD7198ADE1500BE92B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AF0AD6198ADE1500BE92B6 /* CoreLocation.framework */; };
 		27C7329A199295FB00B619E5 /* OpenGLDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C73299199295FB00B619E5 /* OpenGLDebug.m */; };
-		27C7329E199296F400B619E5 /* OpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C7329D199296F400B619E5 /* OpenGLRenderer.m */; };
 		27C732A11992A5D800B619E5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C732A01992A5D800B619E5 /* OpenGLES.framework */; };
 		27C732A31992A5DF00B619E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C732A21992A5DF00B619E5 /* QuartzCore.framework */; };
 		27C732A61992A76B00B619E5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732A51992A76B00B619E5 /* GameViewController.m */; };
@@ -44,6 +43,11 @@
 		27C732B61992A8C600B619E5 /* CC3GLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732AE1992A8C600B619E5 /* CC3GLMatrix.m */; };
 		27C732B71992A8C600B619E5 /* CC3Kazmath.c in Sources */ = {isa = PBXBuildFile; fileRef = 27C732AF1992A8C600B619E5 /* CC3Kazmath.c */; };
 		27C732B81992A8C600B619E5 /* CC3Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C732B31992A8C600B619E5 /* CC3Math.m */; };
+		27E8AC591993F7BA00659E0C /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8AC581993F7BA00659E0C /* Shader.m */; };
+		27E8AC5C1993F91200659E0C /* OpenGLData.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8AC5B1993F91200659E0C /* OpenGLData.m */; };
+		27E8AC5F1994029500659E0C /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8AC5E1994029500659E0C /* Line.m */; };
+		27E8AC63199406E800659E0C /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8AC62199406E800659E0C /* Vertex.m */; };
+		27E8AC6619940A4600659E0C /* Indices.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8AC6519940A4600659E0C /* Indices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +63,8 @@
 /* Begin PBXFileReference section */
 		270AE8C61992B0B3007D3D8A /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item_powerup_fish.png; path = 3dhelpers/item_powerup_fish.png; sourceTree = SOURCE_ROOT; };
 		270AE8C71992B0B3007D3D8A /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile_floor.png; path = 3dhelpers/tile_floor.png; sourceTree = SOURCE_ROOT; };
-		270AE8CA1992C0D6007D3D8A /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		270AE8CB1992C0D6007D3D8A /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		270AE8CA1992C0D6007D3D8A /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		270AE8CB1992C0D6007D3D8A /* Mesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mesh.m; sourceTree = "<group>"; };
 		271C6E9D198E9751000C9532 /* ZombieState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZombieState.h; path = "Chase Z/ZombieState.h"; sourceTree = "<group>"; };
 		271C6E9E198E9751000C9532 /* ZombieState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZombieState.m; path = "Chase Z/ZombieState.m"; sourceTree = "<group>"; };
 		271C6EA0198E975F000C9532 /* PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerState.h; path = "Chase Z/PlayerState.h"; sourceTree = "<group>"; };
@@ -104,8 +108,6 @@
 		27AF0AD6198ADE1500BE92B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		27C73299199295FB00B619E5 /* OpenGLDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLDebug.m; sourceTree = "<group>"; };
 		27C7329B1992962C00B619E5 /* OpenGLDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLDebug.h; sourceTree = "<group>"; };
-		27C7329C199296F400B619E5 /* OpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
-		27C7329D199296F400B619E5 /* OpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRenderer.m; sourceTree = "<group>"; };
 		27C7329F1992A39B00B619E5 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
 		27C732A01992A5D800B619E5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		27C732A21992A5DF00B619E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -123,6 +125,16 @@
 		27C732B21992A8C600B619E5 /* CC3Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CC3Math.h; path = 3dhelpers/CC3Math.h; sourceTree = SOURCE_ROOT; };
 		27C732B31992A8C600B619E5 /* CC3Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CC3Math.m; path = 3dhelpers/CC3Math.m; sourceTree = SOURCE_ROOT; };
 		27C732B41992A8C600B619E5 /* ccTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ccTypes.h; path = 3dhelpers/ccTypes.h; sourceTree = SOURCE_ROOT; };
+		27E8AC571993F7BA00659E0C /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		27E8AC581993F7BA00659E0C /* Shader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shader.m; sourceTree = "<group>"; };
+		27E8AC5A1993F91200659E0C /* OpenGLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLData.h; sourceTree = "<group>"; };
+		27E8AC5B1993F91200659E0C /* OpenGLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLData.m; sourceTree = "<group>"; };
+		27E8AC5D1994029500659E0C /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		27E8AC5E1994029500659E0C /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		27E8AC61199406E800659E0C /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		27E8AC62199406E800659E0C /* Vertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
+		27E8AC6419940A4600659E0C /* Indices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Indices.h; sourceTree = "<group>"; };
+		27E8AC6519940A4600659E0C /* Indices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Indices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +229,7 @@
 				276C97A3198980AA00086AB6 /* ShaderVertex.glsl */,
 			);
 			name = Shader;
+			path = "Chase Z";
 			sourceTree = "<group>";
 		};
 		2750DB64198D870400E482FA /* AppDelegate */ = {
@@ -268,7 +281,6 @@
 				27C732941992956C00B619E5 /* 3D */,
 				2750DB65198D871E00E482FA /* Helpers */,
 				2750DB64198D870400E482FA /* AppDelegate */,
-				2750DB63198D86F600E482FA /* Shader */,
 				2750DB62198D86EA00E482FA /* Images */,
 				2750DB61198D86D000E482FA /* Annotations */,
 				2750DB60198D86B300E482FA /* Controllers */,
@@ -310,15 +322,24 @@
 		27C732941992956C00B619E5 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
+				2750DB63198D86F600E482FA /* Shader */,
+				27C7329F1992A39B00B619E5 /* Cube.h */,
 				27C7329B1992962C00B619E5 /* OpenGLDebug.h */,
 				27C73299199295FB00B619E5 /* OpenGLDebug.m */,
-				27C7329C199296F400B619E5 /* OpenGLRenderer.h */,
-				27C7329D199296F400B619E5 /* OpenGLRenderer.m */,
-				27C7329F1992A39B00B619E5 /* Cube.h */,
 				27C732A71992A7BA00B619E5 /* OpenGLView.h */,
 				27C732A81992A7BA00B619E5 /* OpenGLView.m */,
-				270AE8CA1992C0D6007D3D8A /* Model.h */,
-				270AE8CB1992C0D6007D3D8A /* Model.m */,
+				270AE8CA1992C0D6007D3D8A /* Mesh.h */,
+				270AE8CB1992C0D6007D3D8A /* Mesh.m */,
+				27E8AC571993F7BA00659E0C /* Shader.h */,
+				27E8AC581993F7BA00659E0C /* Shader.m */,
+				27E8AC5A1993F91200659E0C /* OpenGLData.h */,
+				27E8AC5B1993F91200659E0C /* OpenGLData.m */,
+				27E8AC5D1994029500659E0C /* Line.h */,
+				27E8AC5E1994029500659E0C /* Line.m */,
+				27E8AC61199406E800659E0C /* Vertex.h */,
+				27E8AC62199406E800659E0C /* Vertex.m */,
+				27E8AC6419940A4600659E0C /* Indices.h */,
+				27E8AC6519940A4600659E0C /* Indices.m */,
 			);
 			name = 3D;
 			path = ..;
@@ -447,22 +468,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E8AC591993F7BA00659E0C /* Shader.m in Sources */,
 				27C732B71992A8C600B619E5 /* CC3Kazmath.c in Sources */,
 				271C6EA2198E975F000C9532 /* PlayerState.m in Sources */,
 				2750DB24198D7AB600E482FA /* SafeRoomAnnotation.m in Sources */,
 				275B8F7E198D1364001218DD /* ZombieAnnotation.m in Sources */,
+				27E8AC5F1994029500659E0C /* Line.m in Sources */,
+				27E8AC6619940A4600659E0C /* Indices.m in Sources */,
 				277E9761198BCF7300A1EA74 /* ZombieHandler.m in Sources */,
-				27C7329E199296F400B619E5 /* OpenGLRenderer.m in Sources */,
 				27C7329A199295FB00B619E5 /* OpenGLDebug.m in Sources */,
 				276C97C3198981F000086AB6 /* MapViewController.m in Sources */,
+				27E8AC63199406E800659E0C /* Vertex.m in Sources */,
 				27C732A91992A7BA00B619E5 /* OpenGLView.m in Sources */,
 				2750DB29198D7EAD00E482FA /* Player.m in Sources */,
 				27C732A61992A76B00B619E5 /* GameViewController.m in Sources */,
 				2750DB21198D777E00E482FA /* SafeRoom.m in Sources */,
 				27C732B51992A8C600B619E5 /* CC3Foundation.m in Sources */,
 				276C97A0198980AA00086AB6 /* AppDelegate.m in Sources */,
+				27E8AC5C1993F91200659E0C /* OpenGLData.m in Sources */,
 				27C732B61992A8C600B619E5 /* CC3GLMatrix.m in Sources */,
-				270AE8CC1992C0D6007D3D8A /* Model.m in Sources */,
+				270AE8CC1992C0D6007D3D8A /* Mesh.m in Sources */,
 				275B8F75198D056F001218DD /* Zombie.m in Sources */,
 				2750DB2C198D81AA00E482FA /* PlayerAnnotation.m in Sources */,
 				275B8F7B198D0FD6001218DD /* LatLon.m in Sources */,

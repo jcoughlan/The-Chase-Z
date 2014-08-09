@@ -11,25 +11,20 @@
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
 
+#include "Shader.h"
+#include "Line.h"
+
 @interface OpenGLView : UIView {
     CAEAGLLayer* _eaglLayer;
     EAGLContext* _context;
-    GLuint _colorRenderBuffer;
-    GLuint _positionSlot;
-    GLuint _colorSlot;
-    GLuint _projectionUniform;
-    GLuint _modelViewUniform;
-    float _currentRotation;
-    GLuint _depthRenderBuffer;
+    OpenGLData* openGlData;
+    Shader* shaderManager;
+    Line* line;
     
-    GLuint _floorTexture;
-    GLuint _fishTexture;
-    GLuint _texCoordSlot;
-    GLuint _textureUniform;
-    GLuint _vertexBuffer;
-    GLuint _indexBuffer;
-    GLuint _vertexBuffer2;
-    GLuint _indexBuffer2;
+    GLuint _colorRenderBuffer;
+    GLuint _depthRenderBuffer;
 }
+
+
 
 @end

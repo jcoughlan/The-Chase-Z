@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
-
+//
     self.openglView = [[OpenGLView alloc]initWithFrame:screenBounds];
     [self.view addSubview:self.openglView];
 }
